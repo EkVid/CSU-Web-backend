@@ -13,10 +13,11 @@ app.use(cors());
 app.post("/submit-form", async (req, res) => {
   const { name, email, category, keywords, message } = req.body;
   const discordWebhookUrl =
-    "https://discord.com/api/webhooks/1171175784753418271/_0tGF96LkzGdVVzg6pbHGA5n4D2oONeIt0VfP-o99riO_2XyO83esRaC9WwQ2yWrACjS";
+    "https://discord.com/api/webhooks/1203080369088237638/tQQflKcKiE5h8gZrRLm8dfO0fgMNFdKRBW8MnjbNpRCXD2sSvE8fURImrtAQQIktRwqs";
   const discordMessage = {
     content: `**New Submission**\n\n **Name**:\n ${name}\n\n **Email**:\n ${email}\n\n **Category**:\n ${category}\n\n **Keywords**:\n ${keywords}\n\n **Article**:\n ${message}`,
   };
+  console.log(req.body);
   try {
     await axios.post(discordWebhookUrl, discordMessage);
     res.redirect("https://csu-web.vercel.app/thankyou");
