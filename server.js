@@ -11,11 +11,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post("/submit-form", async (req, res) => {
-  const { name, email, category, keywords, message } = req.body;
+  const { name, email, category, programs, year, keywords, message } = req.body;
   const discordWebhookUrl =
     "https://discord.com/api/webhooks/1203080369088237638/tQQflKcKiE5h8gZrRLm8dfO0fgMNFdKRBW8MnjbNpRCXD2sSvE8fURImrtAQQIktRwqs";
   const discordMessage = {
-    content: `**New Submission**\n\n **Name**:\n ${name}\n\n **Email**:\n ${email}\n\n **Category**:\n ${category}\n\n **Keywords**:\n ${keywords}\n\n **Article**:\n ${message}`,
+    content: `**New Submission**\n\n **Name**:\n ${name}\n\n **Email**:\n ${email}\n\n **Year of Study**:\n ${year}\n\n **Programs**:\n ${programs}\n\n **Category**:\n ${category}\n\n **Keywords**:\n ${keywords}\n\n **Article**:\n ${message}`,
   };
   console.log(req.body);
   try {
