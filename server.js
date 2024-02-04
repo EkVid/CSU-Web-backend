@@ -23,7 +23,7 @@ app.post("/submit-form", async (req, res) => {
     res.redirect("https://csu-web.vercel.app/thankyou");
   } catch (error) {
     console.error("Error sending message to Discord", error);
-    res.status(500).send("Error submitting form");
+    res.redirect("https://csu-web.vercel.app/blog_error");
   }
 });
 
